@@ -5,12 +5,7 @@
 (defn flat-1
   "Flatten elements of a vec for depth level 1"
   [v]
-  (reduce (fn [acc e]
-            (if (vector? e)
-              (into acc e)
-              (conj acc e)))
-          []
-          v))
+  (mapcat identity v))
 
 (defn create
   "Creates an applet app and returns it."
